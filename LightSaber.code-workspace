@@ -1,0 +1,75 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "MinimalPlantSensor",
+			"path": "../MinimalPlantSensor"
+		},
+		{
+			"name": "PlantSensor",
+			"path": "../PlantSensor"
+		},
+		{
+			"name": "PowerMeter",
+			"path": "../PowerMeter"
+		},
+		{
+			"name": "HallMonitor",
+			"path": "../HallMonitor"
+		},
+		{
+			"name": "HallMonitor2",
+			"path": "../HallMonitor2"
+		},
+		{
+			"name": "PlantSensor2",
+			"path": "../PlantSensor2"
+		},
+		{
+			"name": "PlantSensor3",
+			"path": "../PlantSensor3"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"list": "cpp",
+			"ranges": "cpp",
+			"*.tcc": "cpp",
+			"memory": "cpp",
+			"istream": "cpp",
+			"functional": "cpp",
+			"tuple": "cpp",
+			"utility": "cpp",
+			"chrono": "cpp",
+			"type_traits": "cpp",
+			"format": "cpp",
+			"system_error": "cpp",
+			"cmath": "cpp",
+			"atomic": "cpp",
+			"bit": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"map": "cpp",
+			"iterator": "cpp",
+			"memory_resource": "cpp",
+			"optional": "cpp",
+			"algorithm": "cpp",
+			"numeric": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"ostream": "cpp",
+			"set": "cpp",
+			"variant": "cpp"
+		}
+	}
+}

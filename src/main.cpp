@@ -17,13 +17,6 @@
 #define LOG2(x, y)
 #endif
 
-#define CYCLE_INC(x, count) \
-  x++;                      \
-  x %= count
-#define CYCLE_DEC(x, count) \
-  x += count - 1;           \
-  x %= count
-
 // ---------------------------- НАСТРОЙКИ -------------------------------
 #define NUM_LEDS 50    // число МИКРОСХЕМ на ленте
 #define BRIGHTNESS 255 // максимальная яркость ленты (0 - 255)
@@ -41,10 +34,10 @@
 #define BATTERY_THR 10 // порог заряда АКБ в %, если 0, то не выключаться до конца
 
 // ---------------------------- ПИНЫ -------------------------------
-#define BTN1_PIN D5 // пин кнопки 1
+#define BTN1_PIN D1 // пин кнопки 1
 
 #define VOLT_PIN A0 // пин вольтметра
-#define LED_PIN D8  // DIN ленты
+#define LED_PIN D0  // DIN ленты
 #define SDA_PIN D6
 #define SCL_PIN D7
 
@@ -118,22 +111,30 @@ void loop()
   delay(1);
   now = millis();
 
-  mp3tick();
-  ledtick(isOn);
+  ledtick();
   btnTick();
 
   if (isOn)
   {
+    mp3tick();
+    randomBlink();
     readAccel();
     strikeTick();
     swingTick();
+  } else {
+    standbyBlink();
   }
 }
 
 void btnTick()
 {
   btn1.tick();
-  if (btn1.isClick())
+  if (btn1.isDouble())
+  {
+    cycleColor();
+    return;
+  }
+  if (btn1.isSingle())
   {
     if (isOn)
     {
@@ -157,7 +158,7 @@ void on()
   isOn = 1;
 }
 
-void off()
+void off() 
 {
   userLastActivity = now;
   playOffEffect();
